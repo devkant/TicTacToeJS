@@ -21,8 +21,14 @@ function endGame(winner) {
     game.state = GAME_STATE_ENDED
 }
 
-function restartGame() {
-    
+function resetGame() {
+    if(Math.random() > 0.5) game.turn = '0'
+    else game.turn = 'X'
+
+    game.state = GAME_STATE_STARTED
+    Array.from(document.getElementsByTagName('td')).forEach(cell => {
+        cell.textContent = ''
+    })
 }
 
 function nextTurn() {
@@ -71,7 +77,7 @@ function isDiagonalCaptured(row, col) {
         gameTable.children[0].children[2].children[2],
     ]
 
-    let diag1 = [
+    let diag2 = [
         gameTable.children[0].children[0].children[2],
         gameTable.children[0].children[1].children[1],
         gameTable.children[0].children[2].children[0],
