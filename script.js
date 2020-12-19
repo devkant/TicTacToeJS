@@ -107,12 +107,3 @@ function boxClicked(row, col) {
     nextTurn()
 }
 
-module.exports = {
-    boxClicked,
-    endGame,
-    resetGame,
-    isDiagonalCaptured,
-    isColCaptured,
-    isRowCaptured,
-    isSeqCaptured,
-}
