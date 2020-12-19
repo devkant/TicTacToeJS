@@ -26,7 +26,7 @@ function resetGame() {
     else game.turn = 'X'
 
     game.state = GAME_STATE_STARTED
-    move = 0
+    game.move = 0
     Array.from(document.getElementsByTagName('td')).forEach(cell => {
         cell.textContent = ''
     })
@@ -105,4 +105,14 @@ function boxClicked(row, col) {
     isColCaptured(col)
     isDiagonalCaptured(row, col)
     nextTurn()
+}
+
+module.exports = {
+    boxClicked,
+    endGame,
+    resetGame,
+    isDiagonalCaptured,
+    isColCaptured,
+    isRowCaptured,
+    isSeqCaptured,
 }
