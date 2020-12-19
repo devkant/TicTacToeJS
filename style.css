@@ -4,11 +4,19 @@ body {
 
 table#game td{
     background-color:bisque;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border: solid saddlebrown;
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
     font-size: 60pt;
+}
+
+button#reset {
+    padding: 15px;
+    background-color: lightgrey;
+    font-size: 10pt;
+    color: black;
+    border-radius: 5px;
 }

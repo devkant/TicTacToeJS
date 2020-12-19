@@ -26,6 +26,7 @@ function resetGame() {
     else game.turn = 'X'
 
     game.state = GAME_STATE_STARTED
+    move = 0
     Array.from(document.getElementsByTagName('td')).forEach(cell => {
         cell.textContent = ''
     })
@@ -88,6 +89,15 @@ function isDiagonalCaptured(row, col) {
 }   
 
 function boxClicked(row, col) {
+    if(game.state===GAME_STATE_ENDED) {
+        alert("Click Reset to play again.")
+        return
+    }
+
+    if(gameTable.children[0].children[row-1].children[col-1].textContent!=='') {
+        alert("Choose Another Box")
+        return
+    }
     console.log(`${row}, ${col}` )
     let clickBox = gameTable.children[0].children[row-1].children[col-1]
     clickBox.textContent = game.turn
